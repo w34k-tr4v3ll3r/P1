@@ -1,7 +1,305 @@
-button{
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  background:purple;
-  color:white;
+/* =========================
+   CSS RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+  --bg-color: #070710;
+  --card-bg: rgba(255, 255, 255, 0.08);
+
+  --primary-color: #8b5cf6;
+  --secondary-color: #a855f7;
+
+  --text-color: #ffffff;
+  --text-muted: #b4b4c5;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --shadow-lg:
+    0 10px 40px rgba(139, 92, 246, 0.3);
+
+  --radius-lg: 24px;
+
+  --transition:
+    all 0.3s ease;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+
+  background: var(--bg-color);
+
+  color: var(--text-color);
+
+  min-height: 100vh;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+
+  padding: 5rem 1.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4rem;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 100vh;
+
+  position: relative;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero__content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  max-width: 600px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.hero__badge {
+
+  width: fit-content;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 999px;
+
+  background:
+    rgba(139, 92, 246, 0.15);
+
+  border:
+    1px solid rgba(139, 92, 246, 0.4);
+
+  color: #d8b4fe;
+
+  font-size: 0.9rem;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.hero__title {
+
+  font-size: 3rem;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.hero__description {
+
+  color: var(--text-muted);
+
+  font-size: 1rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero__buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.btn {
+
+  border: none;
+
+  cursor: pointer;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  transition: var(--transition);
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.btn--primary {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+
+  color: white;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:hover {
+
+  transform: translateY(-3px);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.btn--secondary {
+
+  background: transparent;
+
+  color: white;
+
+  border:
+    1px solid var(--border-color);
+}
+
+.btn--secondary:hover {
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero__visual {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+
+  width: 320px;
+
+  padding: 2rem;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--card-bg);
+
+  border:
+    1px solid var(--border-color);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: var(--shadow-lg);
+
+  animation:
+    float 4s ease-in-out infinite;
+}
+
+.glass-card h2 {
+
+  margin-bottom: 1rem;
+
+  font-size: 1.8rem;
+}
+
+.glass-card p {
+
+  color: var(--text-muted);
+}
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   TABLET & DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .hero {
+
+    flex-direction: row;
+
+    padding: 6rem;
+  }
+
+  .hero__title {
+
+    font-size: 4.5rem;
+  }
 }
