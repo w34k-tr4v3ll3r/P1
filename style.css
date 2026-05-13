@@ -303,3 +303,14 @@ body {
     font-size: 4.5rem;
   }
 }
+/* =========================
+   ACTIVE CARD STATE
+========================= */
+
+.active-card {
+
+  border: 1px solid #8b5cf6;
+
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.6);
+}
